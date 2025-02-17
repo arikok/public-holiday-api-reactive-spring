@@ -3,6 +3,7 @@ package com.arikok.publicholiday.controller;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.arikok.publicholiday.config.TestContainerHelper;
 import com.arikok.publicholiday.service.countries.AvailableCountryDtoItem;
 import com.arikok.publicholiday.service.countries.CachedAvailableCountriesProvider;
 import com.arikok.publicholiday.service.nonweekend.NonWeekendHolidaysCountQuery;
@@ -25,9 +26,12 @@ import reactor.core.publisher.Mono;
 @SpringBootTest
 class NonWeekendHolidaysControllerTest {
 
+  static {
+    TestContainerHelper.initializeRedisContainer();
+  }
+
   @Autowired
   private WebTestClient webTestClient;
-
   @MockitoBean
   private NonWeekendHolidaysService nonWeekendHolidaysService;
   @MockitoBean

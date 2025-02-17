@@ -42,11 +42,10 @@ Prerequisites
 - Docker (Version 27.5.1, compose 2.32.4)
 
 - Building the Project run:
-    - mvn clean install -DskipTests
+    - Please make sure that Docker agent is running before build
+    - mvn clean install
 
 - Running Tests run:
-    - Running tests requires local Redis instance. Therefore Redis Docker container must be up
-      before running the tests
     - mvn test
 
 - Running the Application run:
@@ -64,10 +63,10 @@ Design Considerations:
 - Testability: By separating Nager API calls and business logic into dedicated services (e.g.,
   PublicHoliday, LastCelebrated), unit tests can target these components directly.
 - Faster Deployments: The Docker image has been optimized for Spring applications.
+- Test-Containers Integration Tests : Initializing Redis via test-containers
 
 Future Improvements
 
 - First WebClient requests takes 5 seconds. As a work-around, An warm-up process has been
   implemented to run startups. Proper solution needs to check.
 - Testing: Improve test coverage for service layer and cache configs
-- Test containers for Redis to be able to run tests without docker

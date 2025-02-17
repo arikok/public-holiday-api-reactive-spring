@@ -3,6 +3,7 @@ package com.arikok.publicholiday.controller;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import com.arikok.publicholiday.config.TestContainerHelper;
 import com.arikok.publicholiday.service.countries.AvailableCountryDtoItem;
 import com.arikok.publicholiday.service.countries.CachedAvailableCountriesProvider;
 import com.arikok.publicholiday.service.lastcelebrated.FindLastCelebratedHolidaysQuery;
@@ -24,6 +25,10 @@ import reactor.core.publisher.Mono;
 @AutoConfigureMockMvc
 @SpringBootTest
 class LastCelebratedHolidaysControllerTest {
+
+  static {
+    TestContainerHelper.initializeRedisContainer();
+  }
 
   @Autowired
   private WebTestClient webTestClient;
