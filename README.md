@@ -16,6 +16,7 @@ Features
 - Reactive Framework - WebClient - Non-Blocking I/O : Allows threads to work on other tasks during
   Nager API calls.
 - Double Cache Service: Uses Caffeine as a local cache and Redis as a remote cache.
+- Parallel API Calls: When appropriate, we send API requests in parallel to reduce execution time.
 
 ENDPOINTS:
 
