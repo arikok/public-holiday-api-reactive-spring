@@ -1,0 +1,6 @@
+How to import intellij-java-google-style.xml to IntelliJ?
+  - Settings -> Editor -> Java -> Import Schema -> Choose file
+
+How to setup reformat code at save on Intellij ?
+  - Settings -> Tools -> Actions on Save
+    - Choose Reformat Code, Optimize Import, Rearrange
